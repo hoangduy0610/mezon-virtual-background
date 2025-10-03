@@ -1,5 +1,5 @@
 {
-  "name": "mezon-background-module",
+  "name": "mezon-virtual-background",
   "version": "1.0.0",
   "description": "React component for video background effects using MediaPipe",
   "main": "dist/index.js",
@@ -28,12 +28,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hoangduy0610/mezon-background-module.git"
+    "url": "git+https://github.com/hoangduy0610/mezon-virtual-background.git"
   },
   "bugs": {
-    "url": "https://github.com/hoangduy0610/mezon-background-module/issues"
+    "url": "https://github.com/hoangduy0610/mezon-virtual-background/issues"
   },
-  "homepage": "https://github.com/hoangduy0610/mezon-background-module#readme",
+  "homepage": "https://github.com/hoangduy0610/mezon-virtual-background#readme",
   "peerDependencies": {},
   "dependencies": {},
   "devDependencies": {
