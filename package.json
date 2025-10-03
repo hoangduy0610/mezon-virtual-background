@@ -1,0 +1,53 @@
+{
+  "name": "mezon-background-module",
+  "version": "1.0.0",
+  "description": "React component for video background effects using MediaPipe",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "prepare": "npm run build",
+    "pack-local": "npm pack"
+  },
+  "keywords": [
+    "video",
+    "background",
+    "mediapipe",
+    "segmentation",
+    "track",
+    "webrtc",
+    "computer-vision"
+  ],
+  "author": "Nguyen Hoang Duy",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoangduy0610/mezon-background-module.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hoangduy0610/mezon-background-module/issues"
+  },
+  "homepage": "https://github.com/hoangduy0610/mezon-background-module#readme",
+  "peerDependencies": {},
+  "dependencies": {},
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.0",
+    "@rollup/plugin-node-resolve": "^15.2.0",
+    "@rollup/plugin-typescript": "^11.1.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "rollup": "^3.29.0",
+    "rollup-plugin-dts": "^6.0.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "tslib": "^2.6.0",
+    "typescript": "^5.0.0"
+  }
+}

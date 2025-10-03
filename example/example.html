@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Video Background Test</title>
+</head>
+<body>
+    <h1>Simple Video Background Test</h1>
+    <div>
+        <!-- <video id="input" width="320" height="240" autoplay muted></video> -->
+        <video id="output" width="320" height="240" autoplay muted></video>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation/selfie_segmentation.js"></script>
+    <div>
+        <button onclick="setNone()">None</button>
+        <button onclick="setBlur()">Blur</button>
+        <button onclick="setImage()">Image</button>
+        <input type="file" id="imageInput" accept="image/*" onchange="loadCustomImage()" />
+    </div>
+
+    <script type="module">
+        import { SimpleVideoBackground } from '../dist/index.esm.js';
+
+        let processor;
+        const outputVideo = document.getElementById('output');
+
+        async function init() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                
+                processor = new SimpleVideoBackground({
+                    width: 320,
+                    height: 240
+                });
+                
+                await processor.initialize();
+                const inputTrack = stream.getVideoTracks()[0];
+                const outputTrack = await processor.processTrack(inputTrack);
+                
+                outputVideo.srcObject = new MediaStream([outputTrack]);
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        window.setNone = () => processor?.setBackgroundMode('none');
+        window.setBlur = () => processor?.setBackgroundMode('blur');
+        window.setImage = () => processor?.setBackgroundMode('image');
+        
+        window.loadCustomImage = async () => {
+            const file = document.getElementById('imageInput').files[0];
+            if (file && processor) {
+                const url = URL.createObjectURL(file);
+                await processor.setBackgroundUrl(url);
+                processor.setBackgroundMode('image');
+            }
+        };
+
+        init();
+    </script>
+</body>
+</html>
