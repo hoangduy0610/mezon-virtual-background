@@ -1,6 +1,6 @@
 {
   "name": "mezon-virtual-background",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React component for video background effects using MediaPipe",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",

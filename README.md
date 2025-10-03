@@ -5,7 +5,7 @@ Simple JavaScript library for processing video tracks with background effects us
 ## Usage
 
 ```javascript
-import { SimpleVideoBackground } from 'mezon-background-module';
+import { SimpleVideoBackground } from 'mezon-virtual-background';
 const stream = await navigator.mediaDevices.getUserMedia({ video: true });
 // Create processor
 const processor = new SimpleVideoBackground({

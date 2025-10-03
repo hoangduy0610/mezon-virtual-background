@@ -1,4 +1,4 @@
-import { SimpleVideoBackground } from 'mezon-background-module';
+import { SimpleVideoBackground } from 'mezon-virtual-background';
 
 // Usage example
 async function setupVideoBackground() {
